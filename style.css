@@ -4,19 +4,12 @@
     --font-secodary:#DEEBFF;
 }
 
-/* raleway-<uniquifier> {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  } */
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
+    /* font-optical-sizing: auto; */
     font-style: normal;
 }
 /* Start Header */
@@ -30,7 +23,7 @@
 
 .reservia_title{
     font-size: 25px;
-    font-family: 'Relaway';
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: var(--font-primary);
 }
@@ -73,7 +66,7 @@
 
 /* End Header */
 /* Start Body */
-body{
+body section, body .header, body .informations{
     padding: 0 10% 0 10%;
 }
 
@@ -195,6 +188,7 @@ body{
     border-radius: 20px;
     padding: 27px 27px;
     margin-right: 15px;
+    position: relative;
 }
 .hebergement h3{
     margin-bottom: 15px;
@@ -214,7 +208,6 @@ body{
     background-size: cover;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-
 }
 
 .hebergement .hebergement_card h5{
@@ -301,12 +294,13 @@ body{
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px;
     gap: 30px;
+    width: 100%;
+    height: 100%;
 }
 
 .show_more{
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
 }
 .show_more:hover{
     cursor: pointer;
@@ -331,89 +325,294 @@ body{
 #activite_a_marseille{
     width: 100%;
     height: 90vh;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 #activite_a_marseille h3{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
-#activite_a_marseille{
-    width: 100%;
-    height: 90vh;
-}
-
-.card{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 200px 100px 200px 100px 200px 200px;
-    gap: 10px;
-}
-
-.one{
-    grid-column: 1/2;
-    grid-row: 1/3;
-}
-
-.two, .three{
-    grid-column: 2/3;
-}
-
-.four{
-    grid-column: 3 / 5;
-    grid-row: 1 / 3;
-}
-
-.five, .six{
-    grid-column: 4 /5;
-    grid-row: 2/3;
-}
-
-/* 
 .card{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* .card .activity_card{
-    height: 100%;
-} */
-
-/* .card_display{
-    flex-direction: column;
-    margin: 0px 0px 20px 0px;
-    gap: 10px;
-}
-.activity_card{
-    height: 100%;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px var(--gray-background);
-}
-
-.activity_card img{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 100%;
-}
-
-.card_display .activity_card img
-{
-    display: felx;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+}
+
+.block1, 
+.block2{
+    display: flex;
+    gap: 18px;  
+    height: 100%;
+    border-radius: 20px;
+    padding: 27px 27px;
+}
+
+.block1 img, 
+.block2  img{
+    height: 100%;
     width: 100%;
-    height: 70%;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
-.card_display .activity_card .activity_card_content{
-    margin: 10px 5px;
-    padding: 0px 10px 5px 10px;
+.activity_card .a_cote{
+    height: 86%;
 }
 
-.activity_card .activity_card_content h4{
-    margin: 10px 5px;
-    padding: 5px 10px;
-} */ 
+.block1 .activity_card, .block2 .activity_card, #vieux_port{
+    margin-top: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 10px 10px 7px var(--gray-background);
+}
+
+/* #vieux_port{
+    box-shadow: 10px 10px 7px var(--gray-background);
+} */
+
+.block1 .activity_card_content,
+.block2 .activity_card_content,
+.sous-block .activity_card_content{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.block .activity_card_content h4{
+    font-weight: bold;
+}
+
+#footer{
+    width: 100%;
+    /* height: 100%; */
+    background-color: var(--gray-background);
+    margin-top: 30px;
+    /* align-items: center; */
+}
+
+#footer .footer_grid{
+    display: flex;
+    padding: 0 10% 0 10%;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+.footer_about, .footer_hebergement, .footer_assistance{
+    margin-top: 20px;
+
+}
+#footer .footer_grid div>li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#footer .footer_grid h4{
+    margin-bottom: 15px;
+}
+
+#footer .footer_grid div>li a{
+    text-decoration: none;
+    color: rgb(96, 94, 94);
+}
+
+/* ---------------------------------------------------------------- */
+
+/* Media query pour tablette*/
+
+@media (max-width: 991px){
+
+.informations .filter{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.informations .filter .filter_items{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0px 20px 0px 20px;
+    position: relative;
+}
+
+.informations .filter .filter_items .icon_filter{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-primary);
+    background-color: var(--font-secodary);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.informations .filter .filter_items button{
+    height: 40px;
+    border: var(--gray-background) 3px solid;
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 15px;
+    border-radius: 17px 17px 17px 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+    .hebergement .card_list{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 200px 200px;
+        gap: 30px;
+    }
+
+    #hebergement_a_marseille{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+
+    .populaire .hebergement_card img{
+        display: flex;
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+    #footer{
+        justify-content: center;
+        height: 100%;
+    }
+
+    #footer .footer_grid div>li a{
+        font-size: 12px;
+    }
+}
+
+/*  Media query pour telephone */
+
+@media (max-width: 767px){
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+}
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2% 0%;
+        height: 15vh;
+    }
+    .reservia_title{
+        margin-top: 20px;
+    }
+    header div {
+        padding-top: 2%;
+    }
+    nav {
+        flex-direction: row;
+        font-size: 15px;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        padding: 15px
+    }
+
+    .informations .filter{
+        display: grid;
+        gap: 5px;
+    }
+
+    #hebergement_a_marseille{
+        display: grid;
+        flex-direction: column;
+    }
+
+    #hebergement_a_marseille .hebergement{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #hebergement_a_marseille .populaire{
+        width: 100%;
+    }
+
+    #hebergement_a_marseille aside{
+        margin-top: 60px;
+    }
+
+    .hebergement .card_list{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 300px;
+        gap: 30px;
+    }
+
+    #activite_a_marseille{
+        margin-top: 60px;
+    }
+
+    .activity_card .a_cote{
+        height: 86%;
+    }
+
+    /* .block1, .block2{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    } */
+
+    .sous-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .five,.two, .three{
+        margin-bottom: 40px;
+    }
+
+    .card{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block1, .block2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* height: 100%; */
+        border-radius: 20px;
+        padding: 20px 20px;
+    }
+
+    /*Le footer*/
+    #footer{
+        
+        width: 100%;
+        /* height: 100%; */
+        background-color: var(--gray-background);
+        margin-top: 35px;
+        bottom: 0;
+    }
+
+    #footer .footer_grid{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
